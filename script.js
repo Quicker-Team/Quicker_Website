@@ -41,9 +41,11 @@ function sendMail(formInfo) {
     message: formInfo.message,
   }
 
-  emailjs.send('service_0b6dskg', 'template_okvvac8').then(function (res) {
-    console.log('success', res.status)
-  })
+  emailjs
+    .send('service_0b6dskg', 'template_okvvac8', tempParams)
+    .then(function (res) {
+      console.log('success', res.status)
+    })
 }
 
 function getFormInfo() {
