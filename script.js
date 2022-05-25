@@ -36,9 +36,11 @@ function formatPhone(phone) {
 }
 function sendMail(formInfo) {
   const tempParams = {
-    from_name: formInfo.name + ' ' + formInfo.surname,
-    to_name: 'Quicker Team',
+    full_name: formInfo.name + ' ' + formInfo.surname,
+    topic: formInfo.topic,
+    email: formInfo.email,
     message: formInfo.message,
+    phone: formInfo.phone,
   }
 
   emailjs
