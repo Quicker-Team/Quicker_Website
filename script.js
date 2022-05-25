@@ -34,12 +34,19 @@ function getTopic(topic) {
 function formatPhone(phone) {
   return phone.slice(0, 3) + '-' + phone.slice(3, 6) + '-' + phone.slice(6, 10)
 }
+function sendMail() {
+  const tempParams = {
+    from_name: 'FROM_NAME',
+    to_name: 'TO_NAME',
+    message: 'MESSAGE',
+  }
 
-form.addEventListener('submit', (event) => {
-  // handle the form data
-  event.preventDefault()
+  emailjs.send('service_0b6dskg', 'template_okvvac8').then(function (res) {
+    console.log('success', res.status)
+  })
+}
 
-  // formInfo is an object with the form data
+function getFormInfo() {
   const formInfo = {
     topic: '',
     name: '',
@@ -57,16 +64,17 @@ form.addEventListener('submit', (event) => {
   formInfo.phone = formatPhone(form.elements['phone-number'].value)
   formInfo.message = form.elements['your-message'].value
 
-  console.log(formInfo)
+  return formInfo
+}
 
-  Email.send({
-    Host: '	smtp.sendgrid.net',
-    Username: 'apikey',
-    Password:
-      '	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',
-    To: 'techandy42@gmail.com',
-    From: formInfo.email,
-    Subject: formInfo.topic,
-    Body: formInfo.message,
-  }).then((message) => alert('mail sent successfully'))
+form.addEventListener('submit', (event) => {
+  // handle the form data
+  event.preventDefault()
+
+  // formInfo is an object with the form data
+  const formInfo = getFormInfo()
+
+  console.log('formInfo', formInfo)
+
+  sendMail()
 })
