@@ -34,11 +34,11 @@ function getTopic(topic) {
 function formatPhone(phone) {
   return phone.slice(0, 3) + '-' + phone.slice(3, 6) + '-' + phone.slice(6, 10)
 }
-function sendMail() {
+function sendMail(formInfo) {
   const tempParams = {
-    from_name: 'FROM_NAME',
-    to_name: 'TO_NAME',
-    message: 'MESSAGE',
+    from_name: formInfo.name + ' ' + formInfo.surname,
+    to_name: 'Quicker Team',
+    message: formInfo.message,
   }
 
   emailjs.send('service_0b6dskg', 'template_okvvac8').then(function (res) {
@@ -76,5 +76,5 @@ form.addEventListener('submit', (event) => {
 
   console.log('formInfo', formInfo)
 
-  sendMail()
+  sendMail(formInfo)
 })
