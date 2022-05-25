@@ -261,16 +261,16 @@
             </div>
            <div class="form-group">
              <div class="form__field--half">
-            <input id="name" type="text" placeholder="Name*" class="form__field form__text"></input>
+            <input required id="name" type="text" placeholder="First Name*" class="form__field form__text"></input>
              </div>
           <div class="form__field--half">
-          <input id="surname" type="text" placeholder="Surname" class="form__field form__text"></input>
+          <input required id="surname" type="text" placeholder="Surname*" class="form__field form__text"></input>
           </div>
           </div>
       
         <div class="form-group">
           <div class="form__field--half">
-            <input id="email-address" type="text" placeholder="Email address*" class="form__field form__text"></input>
+            <input required id="email-address" type="email" placeholder="Email address*" class="form__field form__text"></input>
           </div>
          <div class="form__field--half">
           <input id="phone-number" type="text" placeholder="Phone number" class="form__field form__text"></input>
@@ -278,7 +278,7 @@
           </div>
   
           <div class="form-group">
-            <textarea id="your-message" type="text" placeholder="Your messsage*" class="form__field form__textarea"></textarea>
+            <textarea required id="your-message" type="text" placeholder="Your messsage*" class="form__field form__textarea"></textarea>
             <button class="btn btn--up btn--width" type="submit">Submit</button>
           </div>
         </form>
