@@ -447,6 +447,13 @@ body {
   display: inline-block;
   width: 77%;
 }
+
+.site__img__sm {
+  margin-top: 50px;
+  display: inline-block;
+  width: 50%;
+}
+
 .site__box-link .btn--revert {
   margin-left: 15px;
 }
